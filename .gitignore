@@ -1,0 +1,22 @@
+# FleetCtrl — Python
+fleetctrl/backend/**/__pycache__/
+*.py[cod]
+*$py.class
+.Python
+.venv/
+venv/
+.env
+.env.*
+
+# FleetCtrl — Node / Vite
+fleetctrl/frontend/node_modules/
+fleetctrl/frontend/dist/
+*.log
+npm-debug.log*
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.idea/
+
+fleetctrl/backend/fleet.local.yml

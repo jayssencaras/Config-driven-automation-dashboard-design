@@ -1,0 +1,30 @@
+fleet:
+  name: demo-fleet
+  version: 1.0
+  dry_run: false
+  servers:
+    - host: 192.168.1.10
+      user: deploy
+      key: ~/.ssh/id_rsa
+      tags: [prod, web]
+    - host: 192.168.1.11
+      user: deploy
+      key: ~/.ssh/id_rsa
+      tags: [staging, api]
+  services:
+    - name: api-gateway
+      image: nginx:alpine
+      replicas: 1
+      target: web
+      ports:
+        - "8080:80"
+      env:
+        ENV: production
+      health_check: /healthz
+    - name: worker
+      image: alpine:latest
+      replicas: 1
+      target: api
+      ports: []
+      env: {}
+      health_check: /healthz

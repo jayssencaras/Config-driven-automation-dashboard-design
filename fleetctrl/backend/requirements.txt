@@ -1,0 +1,8 @@
+fastapi
+uvicorn[standard]
+pyyaml
+paramiko
+docker
+pydantic
+websockets
+python-multipart
